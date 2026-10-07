@@ -163,9 +163,66 @@ You can predict likely failure modes before running the model and diagnose under
 ### Quality gate
 A reviewer can clone the repo and reproduce the main result from documented steps.
 
+
 ---
 
-## Phase 5 — Specialization (choose only one)
+## Phase 5 — Python → Go for AI Systems
+
+### Why this phase exists
+Python remains the primary language for data analysis, experimentation, model training, evaluation, notebooks, and the mainstream ML ecosystem. Go is added as the systems language for production services around AI/ML.
+
+### Learn in Go
+- syntax and project/module structure
+- structs, interfaces, methods
+- pointers and value/reference semantics
+- error handling
+- JSON and file I/O
+- HTTP clients and servers
+- context and cancellation
+- goroutines and channels
+- testing and benchmarks
+- configuration and logging
+- calling Python/ML services over HTTP/gRPC
+
+### Do not migrate these from Python just for practice
+- pandas/NumPy exploration
+- scikit-learn training
+- notebooks
+- model experimentation
+- PyTorch training
+
+### Deliverable
+Take one Python ML/AI project from an earlier phase and split it into:
+- Python: model/data/evaluation layer
+- Go: production API/service layer
+
+Then implement:
+- health endpoint
+- prediction/request endpoint
+- timeout/cancellation
+- validation
+- structured errors
+- logging
+- tests
+- simple benchmark
+
+### Quality gate
+You pass this phase when you can independently:
+1. explain why a component belongs in Python vs Go,
+2. build a small Go service without copying a full tutorial,
+3. call a Python model service or model endpoint,
+4. handle timeout/error/retry cases,
+5. write tests,
+6. benchmark one hot path,
+7. explain goroutine/channel usage without hand-waving.
+
+### Estimated time
+About 3–5 focused weeks at 10–15 hours/week, assuming general programming experience.
+
+
+---
+
+## Phase 6 — Specialization (choose only one)
 
 Choose based on target jobs/projects:
 - Product / experimentation data science
@@ -288,8 +345,11 @@ A realistic range is roughly:
 - Phase 2: 3–5 weeks
 - Phase 3: 5–8 weeks
 - Phase 4: 3–5 weeks
+- Phase 5 (Python → Go for AI Systems): 3–5 weeks
 
-Total foundation + one strong end-to-end project: about 13–22 weeks depending on baseline and how much can be skipped.
+Total through the Data Science foundation + one strong end-to-end project: about 13–22 weeks depending on baseline and how much can be skipped.
+
+Adding the Go systems transition brings the broader path to about 16–27 weeks before later specialization/AI-engineering depth.
 
 This is not a promise of “job-ready” status; the gate is independent performance on unfamiliar data, not course completion.
 
